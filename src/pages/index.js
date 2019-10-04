@@ -1,43 +1,39 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allContentfulProjectModel.edges
+// sections
+import Hero from '../sections/Hero'
+import Portfolio from '../sections/Portfolio'
+import About from '../sections/About'
+import Footer from '../sections/Footer'
 
-    return (
-      <Layout location={this.props.location} title={"siteTitle"}>
 
-        <SEO title="Felix Lopez" />
+const ViewHeightDiv = styled.div`
+  height: 100vh;
+`
 
-        { posts.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <article key={node.slug}>
-              <header>
-                <h3>
-                  <Link to={node.slug}>
-                    {title}
-                  </Link>
-                </h3>
-              </header>
-              <section>
-               <p>{node.description}</p>
-              </section>
-            </article>
-          )
-        })}
-      </Layout>
-    )
-  }
+const PortfolioIndex = ({data, ...props}) =>{
+
+  const siteTitle = data.site.siteMetadata.title
+  const projects = data.allContentfulProjectModel.edges.map(({node}) => node)
+
+  // we link with node.slug 
+
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <Hero/>
+      <ViewHeightDiv/>
+      <Portfolio projects={projects}/>
+      <About/>
+      <Footer/>
+    </Layout>
+  )
 }
 
-export default BlogIndex
+export default PortfolioIndex
 
 export const pageQuery = graphql`
   query {
@@ -46,13 +42,19 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulProjectModel{
+     allContentfulProjectModel{
       edges{
         node{
           title
           description
-          slug
+          website
+          source
           id
+          image{
+            fluid{
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
