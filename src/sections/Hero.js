@@ -160,22 +160,22 @@ const Hero = (props) => {
   			</TextBanner>
 				<ContactList>
 					<ListItem>
-						<a href="#">
+						<a href="https://twitter.com">
 							<FontAwesomeIcon icon ="envelope"/>
 						</a>
 					</ListItem>
 					<ListItem>
-						<a href="#">
+						<a href="https://twitter.com">
 							<FontAwesomeIcon icon ={['fab', 'github']}/>
 						</a>
 					</ListItem>
 					<ListItem>
-						<a href="#">
+						<a href="https://twitter.com">
 							<FontAwesomeIcon icon ={['fab', 'linkedin']}/>
 						</a>
 					</ListItem>
 					<ListItem>
-						<a href="#">
+						<a href="https://twitter.com">
 							<FontAwesomeIcon icon ={['fab', 'instagram']}/>
 						</a>
 					</ListItem>
