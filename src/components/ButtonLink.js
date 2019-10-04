@@ -1,68 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledButton = styled.a.attrs({ target: '_blank' })`
 	overflow: hidden;
 	text-align: center;
 	position: relative;
-	font-size: 1.4rem;
-	font-weight: var(--medium);
+	font-size: 1.2rem;
+	font-weight: var(--bold);
 	padding: 0.5em 1em;	
 	text-transform: uppercase;
-	background: var(--color-darker);
-	z-index: 2;
+	letter-spacing: 1px;
 	text-decoration: none;
-	color: ${props => props.color ? `var(--color-${props.color})` : `var(--color-white)`};
 	outline: none;
+	
+	${props => {
+		if (props.color === 'white'){
+			return `
+			 	color: var(--color-darker);
+			 	background: var(--color-white);
+			`
+		}else if (props.color === 'transparent'){
+			return `
+				background: transparent;
+				border: 1px solid var(--color-white);
+				color: var(--color-white);
+			`
+		}
+	}}
+
+	display: flex;
+	align-items: center;
+
+	span{
+		margin-left: ${({icon}) => icon ? `0.5rem` : ``}
+	}
 
 	@media ${props => props.theme.mediaQueries.small}{
 	  font-size: 1.8rem;
 	}
 
-	&::before, &::after, span::before, span::after{
-		content:'';
-		position: absolute;
-		background: var(--color-white);
-		transition: transform 0.3s linear;
-	}
-
-	/* Left */
-	&::before{
-		left: 0px; top: 0px; bottom: 0px; width: 1px;
-		transform: translateY(-105%);
-	}
-
-	/* Bottom */
-	&::after{
-		bottom: 0px; left: 0px; right: 0px; height: 1px;
-		transform: translateX(-105%);
-	}
-
-	span{
-	 	/* Right */
-		&::before{
-			top: 0px; bottom: 0px; right: 0px; width: 1px;
-			transform: translateY(105%);
-		}
-
-		/* Top */
-		&::after{
-			top: 0px; left: 0px;  right:0px; height: 1px;
-			transform: translateX(105%);
-		}
-	}
-
-	&:active , &:hover, &:focus{
-		 &::before , &::after, span::before, span::after{
-				transform: translate(0, 0);
-		 }
-	}
 `
-const ButtonLink = (props) => {
+const ButtonLink = ({color, icon, children, ...props}) => {
   return (
-    <StyledButton {...props} color={props.color}>
+    <StyledButton {...props} color={color} icon={icon}>
+			<FontAwesomeIcon icon={icon}/>
     	<span>
-    		{props.children}	
+    		{children}	
     	</span>
     </StyledButton>
   )

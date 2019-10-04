@@ -9,7 +9,7 @@ const Wrapper =  styled.div`
 	position: fixed;
 	z-index: 1;
 	color: var(--color-white);
-	background: var(--color-dark)  no-repeat fixed top left;
+	background: var(--color-darker)  no-repeat fixed top left;
 	background-size: cover;
 	background-attachment: scroll;
 

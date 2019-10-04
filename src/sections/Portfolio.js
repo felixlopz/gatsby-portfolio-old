@@ -8,7 +8,7 @@ import ProjectItem from '../components/ProjectItem';
 
 const  Wrapper = styled.section`
   padding: 6em 0;
-	background: var(--color-darker);
+	background: var(--color-dark);
 	color: var(--color-white);
 	z-index: 2;
 	position: relative;

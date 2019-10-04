@@ -8,7 +8,7 @@ const StyledNavbar = styled.div`
 	position: fixed;
 	z-index: 3;
 	width: 100%;
-	background : var(--color-dark);
+	background : var(--color-darker);
 	padding: 0.8em 3em;
 	display: flex;
 	align-items: center;

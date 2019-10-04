@@ -44,24 +44,12 @@ const DescriptionText = styled.p`
 const Footer = styled.div`
 	position: relative;
 	width: 100%;
-	max-width: 280px;
+	max-width: 300px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	padding:0 4em;
 	margin-top: 1rem;
-	
-	&::before{
-		content: '';
-		position: absolute;
-		left: 20%;
-		right: 20%;
-		top: 50%;
-		transform: translateY(-50%);
-		height: 1.8px;
-		background: var(--color-white);
-		z-index: 1;
-	}
 	
 	@media ${props => props.theme.mediaQueries.small}{
 	  max-width: 350px;
@@ -91,10 +79,10 @@ const ProjectItem = ({project}) => {
 			</DescriptionText>
 			<Footer>
 
-				<ButtonLink href={project.website} color="blue-lg">
+				<ButtonLink href={project.website} color ="white" icon="link">
 					demo
 				</ButtonLink>
-				<ButtonLink  href={project.source}>
+				<ButtonLink  href={project.source} color ="transparent" icon="code">
 					code
 				</ButtonLink>
 			</Footer>
