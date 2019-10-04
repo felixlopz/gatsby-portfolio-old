@@ -1,6 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled, { ThemeProvider }from "styled-components"
+import React from "react";
+import styled, { ThemeProvider }from "styled-components";
 
 import SEO from "../components/seo"
 
@@ -14,6 +13,9 @@ import {
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+
+
+import Navbar from '../components/Navbar';
 
 
 const StyledMain = styled.main`
@@ -32,6 +34,7 @@ const Layout = ({children}) => {
   return (
     <ThemeProvider theme={theme}>
       <SEO title="Felix Lopez"/>
+      <Navbar/>
       <StyledMain>{children}</StyledMain>
       <GlobalStyles/>
     </ThemeProvider>
