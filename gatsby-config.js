@@ -1,9 +1,5 @@
 const dotenv = require('dotenv');
-
-if (process.env.NODE_ENV !== 'production'){
-  dotenv.config();
-}
-
+dotenv.config();
 
 
 module.exports = {
@@ -39,7 +35,6 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
