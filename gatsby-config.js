@@ -29,6 +29,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-background-image`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -38,13 +39,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Felix Lopez Personal Portfolio`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `src/images/icon.png`,
       },
     },
     `gatsby-plugin-offline`,
@@ -64,7 +65,7 @@ module.exports = {
         fonts: [
           {
             family: `Poppins`,
-            variants: [`400`, `500`, `700`]
+            variants: [`300`, `400`, `500`, `700`]
           },
         ],
       },

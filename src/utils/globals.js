@@ -28,6 +28,7 @@ export default createGlobalStyle`
       --color-light: ${props => props.theme.colors.light};
       --color-dark: ${props => props.theme.colors.dark};
       --color-darker: ${props => props.theme.colors.darker};
+      --light: 300;
       --regular: 400;
       --medium: 500;
       --bold: 700;
