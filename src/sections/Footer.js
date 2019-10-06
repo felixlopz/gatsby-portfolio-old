@@ -101,13 +101,20 @@ const ListItem = styled.li`
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
+		outline:none;
 		transition: all 0.3s ease-in;
 		
 		a{
 			padding: 0.5em;
+			outline: 0;
+
+
+			&:focus{
+				transform: rotateZ(360deg);	
+			}
 		}
 
-		&:hover{
+		&:hover, &:focus-within{
 			background: ${props => props.color ? `var(--color-${props.color})` : ``};
 			border-radius: 0;
 		}
