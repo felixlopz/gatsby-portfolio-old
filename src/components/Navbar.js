@@ -4,16 +4,31 @@ import  logo from '../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const StyledNavbar = styled.div`
+
+const Wrapper = styled.div`
+	background : var(--color-darker);
+	color: var(--color-white);
+	width: 100%;
 	position: fixed;
 	z-index: 3;
+`
+
+const Container = styled.div`
+	max-width: 1024px;
+	margin: 0 auto;
+`
+
+const StyledNavbar = styled.div`
 	width: 100%;
-	background : var(--color-darker);
 	padding: 0.8em 3em;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: var(--color-white);
+
+	/*@media ${props => props.theme.mediaQueries.medium}{
+		padding: 0.8em 0em;
+	}*/
+
 `
 
 const LogoContainer = styled.div`
@@ -183,91 +198,94 @@ const Navbar = (props) => {
 	}
 
   return (
-  	<StyledNavbar>
-  		<LogoContainer>
-  			<img src={logo} alt="felix lopez logo"/>
-  		</LogoContainer>
+  	<Wrapper>
+  		<Container>  			
+				<StyledNavbar>
+					<LogoContainer>
+						<img src={logo} alt="felix lopez logo"/>
+					</LogoContainer>
 
-		  <MenuButton onClick={()=> toggleNav()}
-		  >
-		  	<MenuButtonBurger isNavOpen={isNavOpen}/>
-		  </MenuButton>
+				  <MenuButton onClick={()=> toggleNav()}
+				  >
+				  	<MenuButtonBurger isNavOpen={isNavOpen}/>
+				  </MenuButton>
 
-		  <Navigation isNavOpen={isNavOpen}>
-		  	<NavList isNavOpen={isNavOpen}>
-		  		<NavLink>
-		  			<Link 
-		  				onClick={()=> {toggleNav(); scroll.scrollToTop()}}
-		  				to="#"
-  				   	spy={true}
-  				   	smooth={true}
-  				   	duration= {1000}
-		  			> 
-		  				Home 
-		  		  </Link>
-		  		</NavLink>
-		  		<NavLink>
-		  			<Link 
-		  				onClick={()=> toggleNav()}
-		  				to="portfolio"
-  				   	spy={true}
-  				   	offset={-62}
-  				   	smooth={true}
-  				   	duration= {1000}
-		  			> 
-		  				Portfolio 
-		  		  </Link>
-		  		</NavLink>
-		  		<NavLink>
-		  			<Link 
-		  				onClick={()=> toggleNav()}
-		  				to="about"
-  				   	spy={true}
-  				   	offset={-62}
-  				   	smooth={true}
-  				   	duration= {1000}
-		  			> 
-		  				About 
-		  		  </Link>
-		  		</NavLink>
-		  		<NavLink>
-		  			<Link 
-		  				onClick={()=> toggleNav()}
-		  				to="contact"
-  				   	spy={true}
-  				   	offset={-62}
-  				   	smooth={true}
-  				   	duration= {1000}
-		  			> 
-		  				Contact 
-		  		  </Link>
-		  		</NavLink>
-		  	</NavList>
-		  	<ContactList isNavOpen={isNavOpen}>
-		  		<ListItem>
-		  			<a href="https://twitter.com">
-		  				<FontAwesomeIcon icon ="envelope"/>
-		  			</a>
-		  		</ListItem>
-		  		<ListItem>
-		  			<a href="https://twitter.com">
-		  				<FontAwesomeIcon icon ={['fab', 'github']}/>
-		  			</a>
-		  		</ListItem>
-		  		<ListItem>
-		  			<a href="https://twitter.com">
-		  				<FontAwesomeIcon icon ={['fab', 'linkedin']}/>
-		  			</a>
-		  		</ListItem>
-		  		<ListItem>
-		  			<a href="https://twitter.com">
-		  				<FontAwesomeIcon icon ={['fab', 'instagram']}/>
-		  			</a>
-		  		</ListItem>
-		  	</ContactList>
-		  </Navigation>
-			
-  	</StyledNavbar>
+				  <Navigation isNavOpen={isNavOpen}>
+				  	<NavList isNavOpen={isNavOpen}>
+				  		<NavLink>
+				  			<Link 
+				  				onClick={()=> {toggleNav(); scroll.scrollToTop()}}
+				  				to="#"
+							   	spy={true}
+							   	smooth={true}
+							   	duration= {1000}
+				  			> 
+				  				Home 
+				  		  </Link>
+				  		</NavLink>
+				  		<NavLink>
+				  			<Link 
+				  				onClick={()=> toggleNav()}
+				  				to="portfolio"
+							   	spy={true}
+							   	offset={-62}
+							   	smooth={true}
+							   	duration= {1000}
+				  			> 
+				  				Portfolio 
+				  		  </Link>
+				  		</NavLink>
+				  		<NavLink>
+				  			<Link 
+				  				onClick={()=> toggleNav()}
+				  				to="about"
+							   	spy={true}
+							   	offset={-62}
+							   	smooth={true}
+							   	duration= {1000}
+				  			> 
+				  				About 
+				  		  </Link>
+				  		</NavLink>
+				  		<NavLink>
+				  			<Link 
+				  				onClick={()=> toggleNav()}
+				  				to="contact"
+							   	spy={true}
+							   	offset={-62}
+							   	smooth={true}
+							   	duration= {1000}
+				  			> 
+				  				Contact 
+				  		  </Link>
+				  		</NavLink>
+				  	</NavList>
+				  	<ContactList isNavOpen={isNavOpen}>
+				  		<ListItem>
+				  			<a href="https://twitter.com">
+				  				<FontAwesomeIcon icon ="envelope"/>
+				  			</a>
+				  		</ListItem>
+				  		<ListItem>
+				  			<a href="https://twitter.com">
+				  				<FontAwesomeIcon icon ={['fab', 'github']}/>
+				  			</a>
+				  		</ListItem>
+				  		<ListItem>
+				  			<a href="https://twitter.com">
+				  				<FontAwesomeIcon icon ={['fab', 'linkedin']}/>
+				  			</a>
+				  		</ListItem>
+				  		<ListItem>
+				  			<a href="https://twitter.com">
+				  				<FontAwesomeIcon icon ={['fab', 'instagram']}/>
+				  			</a>
+				  		</ListItem>
+				  	</ContactList>
+				  </Navigation>
+				</StyledNavbar>
+  		</Container>
+  	</Wrapper>
   )
 }
 

@@ -22,9 +22,14 @@ const Wrapper = styled.section`
 
 `
 const AboutWrapper = styled.div`
+	max-width: 1024px;
+	margin: 0 auto;
 `
 const StackWrapper = styled.div`
+ margin: 0 auto;
+ max-width: 1024px;
  margin-top: 6rem;
+
 `
 const TextContainer = styled.div`
 	margin-top: 2rem;	

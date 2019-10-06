@@ -24,6 +24,8 @@ const  Wrapper = styled.section`
 
 const HeadingWrapper = styled.div`
 	padding: 0 1.5em;
+	max-width: 1024px;
+	margin: 0 auto;
 	
 	@media ${props => props.theme.mediaQueries.smallest}{
 	  padding: 0;
@@ -31,11 +33,14 @@ const HeadingWrapper = styled.div`
 `
 
 const ProjectsWrapper = styled.div`
-	margin-top: 6rem;
+	max-width: 1024px;
+	margin: 6rem auto 0 auto;
 	
 	@media ${props => props.theme.mediaQueries.medium}{
 	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
+	  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+	  grid-column-gap: 6rem; 
+	  justify-content: center;
 	}
 `
 

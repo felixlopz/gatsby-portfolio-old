@@ -2,16 +2,13 @@ import React from 'react';
 import styled , { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-const Wrapper =  styled.div`
+const Wrapper =  styled.section`
 	width: 100%; 
 	padding: 1.45em 1.5em; 
 	position: fixed;
 	z-index: 1;
 	color: var(--color-white);
-	background: var(--color-darker)  no-repeat fixed top left;
-	background-size: cover;
-	background-attachment: scroll;
+	background: var(--color-darker);
 
 	@media ${props => props.theme.mediaQueries.small}{
 	  padding: 1.45em 3em;
@@ -25,6 +22,10 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+
+	max-width: 1024px;
+	margin: 0 auto;
+
 `
 
 const TextBanner = styled.div`
@@ -63,15 +64,6 @@ const HighLight = styled.span`
 	background: linear-gradient(to right, var(--color-green) 0%, var(--color-blue) 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-`
-
-const ScrollDownAnimation = keyframes`
-	0%{
-		transform: translateY(-100%);
-	}	
-	100%{
-	 transform: translateY(100%);
-	}
 `
 
 const ContactList = styled.ul`
@@ -120,12 +112,33 @@ const ListItem = styled.li`
 	}
 `
 
-const ScrollDown = styled.div`
+const ScrollDownAnimation = keyframes`
+	0%{
+		transform: translateY(-100%);
+	}	
+	100%{
+	 transform: translateY(100%);
+	}
+`
+
+const ScrollDownBox = styled.div`
 	display: none;
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	width: 1px;
+	height: 60px;
+
+	@media ${props => props.theme.mediaQueries.medium}{
+		display: block;
+	} 
+`
+
+const ScrollDown = styled.div`
 	position: relative;
 	overflow: hidden;
 	width: 1px;
-	height: 40px;
+	height: 60px;
 	margin-top: 4rem;
 
 	&::before{
@@ -158,6 +171,9 @@ const Hero = (props) => {
 						<HighLight>front end </HighLight> web developer
 					</Ocupation>
   			</TextBanner>
+  			<ScrollDownBox>
+  				<ScrollDown/>
+  			</ScrollDownBox>
 				<ContactList>
 					<ListItem>
 						<a href="https://twitter.com">
