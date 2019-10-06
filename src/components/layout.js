@@ -11,6 +11,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { 
   faBars,
   faEnvelope,
+  faLink,
+  faCode,
 } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
@@ -24,6 +26,8 @@ const StyledMain = styled.main`
 
 library.add(
   fab,
+  faLink,
+  faCode,
   faBars,
   faEnvelope,
  );
