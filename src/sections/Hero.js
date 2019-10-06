@@ -78,7 +78,7 @@ const ContactList = styled.ul`
 
 	@media ${props => props.theme.mediaQueries.small}{
 	  height: 20rem;
-	  bottom:auto;
+	  bottom: auto;
 	  left: auto;
 	  top: 50%;
 	  transform: translateY(-50%);
@@ -94,13 +94,34 @@ const ListItem = styled.li`
 	line-height: 1;
 
 	a{
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		color: var(--color-white);
 		font-size: 2.4rem;
 		text-decoration: none;
+		outline: none;
 
 	  @media ${props => props.theme.mediaQueries.small}{
 	    font-size: 2.8rem;
 	  }
+
+		@media ${props => props.theme.mediaQueries.medium}{
+			padding: 0.3em 0.7em;
+			background-image: linear-gradient(135deg, var(--color-white) 50%, transparent 50%);
+	    background-position: -50px -50px;
+	    background-size: 0px 50px;
+	    background-repeat: no-repeat;	
+	    transition: all 0.6s ease-in-out;
+
+	    &:hover, &:focus{
+	    	color: var(--color-darker);
+  	    background-size: 300% 300%;
+  			background-position: 0% 0%;
+	    }		
+		}
+
 	}
 
 	&:not(:last-child){
@@ -175,7 +196,7 @@ const Hero = (props) => {
   				<ScrollDown/>
   			</ScrollDownBox>
 				<ContactList>
-					<ListItem>
+					<ListItem >
 						<a href="https://twitter.com">
 							<FontAwesomeIcon icon ="envelope"/>
 						</a>

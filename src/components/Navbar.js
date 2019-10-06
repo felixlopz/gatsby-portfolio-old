@@ -133,10 +133,14 @@ const NavLink = styled.li`
 		color: var(--color-white);
 
 		@media ${props => props.theme.mediaQueries.small}{
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 			font-weight: var(--light);
-			text-transform: uppercase;
 			cursor: pointer;
+			transition: color 0.3s ease-in;
+
+			&:hover, &:focus{
+				color: var(--color-blue-lg);
+			}
 		}
 	}
 
@@ -153,7 +157,7 @@ const ContactList = styled.ul`
 	right: 0;
 	bottom: 8%;
 	transform: ${props => props.isNavOpen ? 'translateX(0)' : 'translateX(-100%)'};
-	transition: ${props => props.isNavOpen ? 'transform 0.3s 0.35s ease' : ''};
+	transition: ${props => props.isNavOpen ? 'transform 0.5s 0.35s cubic-bezier(0.6,-0.08, 0.44, 1.52)' : ''};
 	display: flex;
 	align-items: center;
 	justify-content: center;

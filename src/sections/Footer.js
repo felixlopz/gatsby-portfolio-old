@@ -58,39 +58,67 @@ const Email = styled.a`
 	font-weight: var(--medium);
 	color: var(--color-light); 
 	
-	@media ${props => props.theme.mediaQueries.smaller}{
+	@media ${props => props.theme.mediaQueries.smallest}{
 	 	font-size: 2.9rem;
 	}
 
+	@media ${props => props.theme.mediaQueries.medium}{
+		cursor: pointer;
+		transition: all 0.3s cubic-bezier(0.42, 0, 0.61, 1.16);
+		&:hover{
+			color: var(--color-blue-lg);	
+		}
+	}
 `
 
 const ContactList = styled.ul`
-	margin-top: 1rem;
+	margin-top: 4rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	list-style: none;
-
 `
-
 const ListItem = styled.li`
-	padding: 0.3em;
-	font-size: 1.8rem;
 	line-height: 1;
 	a{
 		color: var(--color-white);
-		font-size: 4rem;
+		font-size: 3.5rem;
 		text-decoration: none;
-	
-		@media ${props => props.theme.mediaQueries.smaller}{
-		  font-size: 4.5rem;
-		}
+		padding: 0em 0.2em;
+		transition: all 0.3s ease-in;
 
 	}
 
 	&:not(:last-child){
 		margin-right: 2rem;
 	}
+
+	@media ${props => props.theme.mediaQueries.medium}{
+		width: 70px;
+		height: 70px;
+		background: var(--color-dark);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		transition: all 0.3s ease-in;
+		
+		a{
+			padding: 0.5em;
+		}
+
+		&:hover{
+			background: ${props => props.color ? `var(--color-${props.color})` : ``};
+			border-radius: 0;
+		}
+
+		&:hover > a{
+			transform: rotateZ(360deg);	
+		}
+	}
+
+
+
 `
 
 const LogoBox = styled.div`
@@ -113,18 +141,18 @@ const Footer = (props) => {
 	  				hello@felixlopez.xyz
 	  			</Email>
 	  			<ContactList>
-	  				<ListItem>
-	  					<a href="https://twitter.com">
+	  				<ListItem color="green">
+	  					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
 	  						<FontAwesomeIcon icon ={['fab', 'github']}/>
 	  					</a>
 	  				</ListItem>
-	  				<ListItem>
-	  					<a href="https://twitter.com">
+	  				<ListItem color="blue">
+	  					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
 	  						<FontAwesomeIcon icon ={['fab', 'linkedin']}/>
 	  					</a>
 	  				</ListItem>
-	  				<ListItem>
-	  					<a href="https://twitter.com">
+	  				<ListItem color="red">
+	  					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
 	  						<FontAwesomeIcon icon ={['fab', 'instagram']}/>
 	  					</a>
 	  				</ListItem>

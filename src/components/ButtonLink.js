@@ -13,21 +13,26 @@ const StyledButton = styled.a.attrs({ target: '_blank' })`
 	letter-spacing: 1px;
 	text-decoration: none;
 	outline: none;
+
+
+	${props => `
+		border: 1px solid var(--color-${props.color});
+		color: var(--color-${props.color});
+		background-image: linear-gradient(135deg, var(--color-${props.color}) 50%, transparent 50%);
+	  background-position: -50px -50px;
+	  background-size: 0px 50px;
+	  background-repeat: no-repeat;
+
+	  &:hover, &:focus{
+	  	color: ${props.color !== 'white' ? `var(--color-white)` : `var(--color-darker)` };
+	    background-size: 300% 300%;
+			background-position: 0% 0%;
+	  }
+	`}
+
 	
-	${props => {
-		if (props.color === 'white'){
-			return `
-			 	color: var(--color-darker);
-			 	background: var(--color-white);
-			`
-		}else if (props.color === 'transparent'){
-			return `
-				background: transparent;
-				border: 1px solid var(--color-white);
-				color: var(--color-white);
-			`
-		}
-	}}
+
+	transition: all 0.5s ease-in-out;
 
 	display: flex;
 	align-items: center;
