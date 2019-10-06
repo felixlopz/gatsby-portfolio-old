@@ -24,6 +24,7 @@ const Wrapper = styled.section`
 const AboutWrapper = styled.div`
 	max-width: 1024px;
 	margin: 0 auto;
+
 `
 const StackWrapper = styled.div`
  margin: 0 auto;
@@ -38,6 +39,13 @@ const TextContainer = styled.div`
 	  margin-left: 4rem;
 	  margin-right: 4rem;
 	}
+
+	@media ${props => props.theme.mediaQueries.medium}{
+		margin-top: 6rem;
+	  margin-left: 9rem;
+	  margin-right: 9rem;
+	}
+
 `
 const Paragraph = styled.p`
 	font-size: 1.7rem;
@@ -63,6 +71,12 @@ const StackTextContainer = styled.div`
 	@media ${props => props.theme.mediaQueries.small}{
 	  margin-left: 4rem;
 	  margin-right: 4rem;
+	}
+
+	@media ${props => props.theme.mediaQueries.medium}{
+		margin-top: 6rem;
+	  margin-left: 8rem;
+	  margin-right: 8rem;
 	}
 `
 const HightLighter = styled.span`
