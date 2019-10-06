@@ -80,7 +80,7 @@ const About = (props) => {
 	  		</Heading>
 	  		<TextContainer>
 					<Paragraph>
-						Hi, my name is Felix Lopez, a 21 years old <HightLighter> Front End Web Developer </HightLighter> and student of Informatics Engineering from Venezuela
+						Hi, my name is Felix Lopez, a 21 years old <HightLighter> Front End Web Developer </HightLighter> and Computer Science student from Venezuela
 					</Paragraph>	
 					<Paragraph>
 						I started web development more than a year ago doing some projects assigned by a class at university, from there I got hooked on this world and started making my own projects.

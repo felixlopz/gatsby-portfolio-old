@@ -18,6 +18,10 @@ const StyledHeading = styled.h1`
 
 	@media ${props => props.theme.mediaQueries.small}{
 	  font-size: 4.5rem;
+
+	}
+	@media ${props => props.theme.mediaQueries.medium}{
+	  font-size: 7.2rem;
 	}
 
 
@@ -29,6 +33,14 @@ const StyledHeading = styled.h1`
 		width: 70px;
 		height: 4px; 
 		background: currentColor;
+
+	 
+	 	@media ${props => props.theme.mediaQueries.medium}{
+			width: 120px;
+			height: 6px; 
+		}
+
+
 	}
 `
 

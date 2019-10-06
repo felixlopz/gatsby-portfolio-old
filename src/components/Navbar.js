@@ -24,11 +24,6 @@ const StyledNavbar = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
-	/*@media ${props => props.theme.mediaQueries.medium}{
-		padding: 0.8em 0em;
-	}*/
-
 `
 
 const LogoContainer = styled.div`
@@ -138,8 +133,9 @@ const NavLink = styled.li`
 		color: var(--color-white);
 
 		@media ${props => props.theme.mediaQueries.small}{
-			font-size: 1.8rem;
-			font-weight: var(--regular);
+			font-size: 1.4rem;
+			font-weight: var(--light);
+			text-transform: uppercase;
 			cursor: pointer;
 		}
 	}

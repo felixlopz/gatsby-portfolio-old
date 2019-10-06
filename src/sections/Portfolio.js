@@ -37,10 +37,13 @@ const ProjectsWrapper = styled.div`
 	margin: 6rem auto 0 auto;
 	
 	@media ${props => props.theme.mediaQueries.medium}{
-	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-	  grid-column-gap: 6rem; 
-	  justify-content: center;
+	  /*display: grid;
+	  grid-template-columns: repeat(auto-fit, 2fr);
+	  grid-column-gap: 10rem; 
+	  justify-content: center;*/
+
+	  display: flex;
+	  flex-flow: row wrap;
 	}
 `
 

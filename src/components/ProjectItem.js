@@ -12,6 +12,15 @@ const Wrapper = styled.div`
 		margin-bottom: 8rem;
 	}
 
+ @media ${props => props.theme.mediaQueries.medium}{
+ 		margin: 0 4%;
+    flex: 1 0 42%;
+
+    &:not(:last-child){
+			margin-bottom: 14rem;
+		}
+  }
+
 `;
 
 const Header = styled.header`
@@ -39,11 +48,18 @@ const Header = styled.header`
 const DescriptionText = styled.p`
 	font-size: 1.6rem;
 	padding: 0.8em  1em;
-	font-weight: var(--regular);
+	font-weight: var(--light);
+	color: var(--color-light);
 
 	@media ${props => props.theme.mediaQueries.small}{
-	  font-size: 2rem;
+	  font-size: 1.8rem;
 	}
+
+	@media ${props => props.theme.mediaQueries.medium}{
+	  padding: 0.8em  0;
+	  line-height: 1.2;
+  }
+
 `
 const Footer = styled.div`
 	position: relative;
