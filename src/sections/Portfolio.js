@@ -20,6 +20,10 @@ const  Wrapper = styled.section`
 	@media ${props => props.theme.mediaQueries.small}{
 	  padding: 6em 3em;
 	}
+
+	@media ${props => props.theme.mediaQueries.medium}{
+	  padding: 12em 3em;
+	}
 `
 
 const HeadingWrapper = styled.div`
@@ -30,6 +34,9 @@ const HeadingWrapper = styled.div`
 	@media ${props => props.theme.mediaQueries.smallest}{
 	  padding: 0;
 	}
+	@media ${props => props.theme.mediaQueries.smallest}{
+	  margin-bottom: 6rem;
+	}
 `
 
 const ProjectsWrapper = styled.div`
@@ -37,13 +44,10 @@ const ProjectsWrapper = styled.div`
 	margin: 6rem auto 0 auto;
 	
 	@media ${props => props.theme.mediaQueries.medium}{
-	  /*display: grid;
-	  grid-template-columns: repeat(auto-fit, 2fr);
-	  grid-column-gap: 10rem; 
-	  justify-content: center;*/
-
 	  display: flex;
 	  flex-flow: row wrap;
+	  justify-content: space-between;
+	  margin: -8rem auto;
 	}
 `
 

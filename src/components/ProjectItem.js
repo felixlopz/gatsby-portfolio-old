@@ -13,11 +13,11 @@ const Wrapper = styled.div`
 	}
 
  @media ${props => props.theme.mediaQueries.medium}{
- 		margin: 0 4%;
-    flex: 1 0 42%;
+    flex: 0 0 45%;
+		padding: 8rem 0;
 
     &:not(:last-child){
-			margin-bottom: 14rem;
+			margin-bottom: 0;
 		}
   }
 
@@ -46,13 +46,13 @@ const Header = styled.header`
 `;
 
 const DescriptionText = styled.p`
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	padding: 0.8em  1em;
 	font-weight: var(--light);
 	color: var(--color-light);
 
 	@media ${props => props.theme.mediaQueries.small}{
-	  font-size: 1.8rem;
+	  font-size: 1.6	rem;
 	}
 
 	@media ${props => props.theme.mediaQueries.medium}{
@@ -64,17 +64,13 @@ const DescriptionText = styled.p`
 const Footer = styled.div`
 	position: relative;
 	width: 100%;
-	max-width: 300px;
 	margin: 0 auto;
+	max-width: 400px;
 	display: flex;
 	justify-content: space-between;
 	padding:0 4em;
 	margin-top: 1rem;
 	
-	@media ${props => props.theme.mediaQueries.small}{
-	  max-width: 350px;
-	}
-
 `;
 
 const Image = styled(Img)`
@@ -99,10 +95,10 @@ const ProjectItem = ({project}) => {
 			</DescriptionText>
 			<Footer>
 
-				<ButtonLink href={project.website} color ="white" icon="link">
+				<ButtonLink href={project.website} color ="blue-lg" icon="link">
 					demo
 				</ButtonLink>
-				<ButtonLink  href={project.source} color ="transparent" icon="code">
+				<ButtonLink  href={project.source} color ="white" icon="code">
 					code
 				</ButtonLink>
 			</Footer>
