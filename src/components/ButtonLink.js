@@ -37,7 +37,7 @@ const StyledButton = styled.a.attrs({ target: '_blank' })`
 	}
 
 	@media ${props => props.theme.mediaQueries.small}{
-	  font-size: 1.8rem;
+	  font-size: 1.4rem;
 	}
 
 `

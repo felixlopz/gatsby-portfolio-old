@@ -29,6 +29,10 @@ const Header = styled.header`
 	    font-size: 2.8rem;
 	    left: 20px;
 	  }
+
+	  @media ${props => props.theme.mediaQueries.medium}{
+	    left: -16px;
+	  }
 	}
 `;
 

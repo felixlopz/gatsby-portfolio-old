@@ -22,8 +22,7 @@ const StackIcon = styled.li`
 
 const StackList = (props) => {
 
-
-	const {allFile: icons }= useStaticQuery(graphql`
+	const {allFile: icons } = useStaticQuery(graphql`
 		query{
 		  allFile(filter:{ absolutePath:{regex: "/icons/"}}){
 		    edges{
