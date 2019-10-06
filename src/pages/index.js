@@ -25,7 +25,7 @@ const PortfolioIndex = ({data, ...props}) =>{
   return (
     <Layout location={props.location} title={siteTitle}>
       <Hero/>
-      <ViewHeightDiv/>
+      <ViewHeightDiv id="home"/>
       <Portfolio projects={projects}/>
       <About/>
       <Footer/>

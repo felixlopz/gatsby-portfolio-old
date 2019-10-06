@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import  logo from '../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 
 const Wrapper = styled.div`
@@ -28,6 +28,14 @@ const StyledNavbar = styled.div`
 
 const LogoContainer = styled.div`
 	width: 45px;
+	cursor: pointer;
+	transition: opacity 0.3s ease-in;
+
+
+	&:hover, &:focus{
+		opacity: 0.75;
+	}
+
 	img{
 		margin-top: 10px;
 		width: 100%;
@@ -133,9 +141,10 @@ const NavLink = styled.li`
 		color: var(--color-white);
 
 		@media ${props => props.theme.mediaQueries.small}{
-			font-size: 1.6rem;
-			font-weight: var(--light);
+			font-size: 1.3rem;
+			font-weight: var(--bold);
 			cursor: pointer;
+			text-transform: uppercase;
 			transition: color 0.3s ease-in;
 
 			&:hover, &:focus{
@@ -202,7 +211,15 @@ const Navbar = (props) => {
   		<Container>  			
 				<StyledNavbar>
 					<LogoContainer>
-						<img src={logo} alt="felix lopez logo"/>
+						<Link 
+		  				onClick={()=> toggleNav()}
+		  				to="home"
+					   	spy={true}
+					   	smooth={true}
+					   	duration= {1000}
+		  			> 
+						  <img src={logo} alt="felix lopez logo"/>
+						</Link>
 					</LogoContainer>
 
 				  <MenuButton onClick={()=> toggleNav()}
@@ -214,8 +231,8 @@ const Navbar = (props) => {
 				  	<NavList isNavOpen={isNavOpen}>
 				  		<NavLink>
 				  			<Link 
-				  				onClick={()=> {toggleNav(); scroll.scrollToTop()}}
-				  				to="#"
+				  				onClick={()=> toggleNav()}
+				  				to="home"
 							   	spy={true}
 							   	smooth={true}
 							   	duration= {1000}
