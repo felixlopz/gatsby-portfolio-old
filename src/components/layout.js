@@ -13,6 +13,7 @@ import {
   faEnvelope,
   faLink,
   faCode,
+  faChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
@@ -30,6 +31,7 @@ library.add(
   faCode,
   faBars,
   faEnvelope,
+  faChevronUp,
  );
 
 
