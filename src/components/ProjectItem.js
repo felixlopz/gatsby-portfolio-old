@@ -45,14 +45,17 @@ const Header = styled.header`
 	}
 `;
 
-const DescriptionText = styled.p`
-	font-size: 1.4rem;
-	padding: 0.8em  1em;
-	font-weight: var(--light);
-	color: var(--color-light);
+const DescriptionText = styled.div`
 
-	@media ${props => props.theme.mediaQueries.small}{
-	  font-size: 1.6rem;
+	p{
+		font-size: 1.4rem;
+		padding: 0.8em  1em;
+		font-weight: var(--light);
+		color: var(--color-light);
+
+		@media ${props => props.theme.mediaQueries.small}{
+		  font-size: 1.6rem;
+		}
 	}
 `
 const TechsWrapper = styled.div`
@@ -108,9 +111,12 @@ const ProjectItem = ({project}) => {
   				{project.title}
   			</h1>
   		</Header>
-			<Image  fluid={project.image.fluid} /> 
-			<DescriptionText>
-				{project.description}
+			<Image  fluid={project.image.fluid} />  
+			<DescriptionText 
+				dangerouslySetInnerHTML={{
+          __html: project.description.childMarkdownRemark.html,
+        }}
+      >
 			</DescriptionText>
 			<TechsWrapper>
 				{

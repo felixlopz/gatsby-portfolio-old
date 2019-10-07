@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 class ProjectPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.contentfulProjectModel
+    const post = this.props.data.contentfulProject
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
@@ -59,7 +59,7 @@ export const pageQuery = graphql`
         author
       }
     }
-    contentfulProjectModel ( slug: { eq: $slug } ){
+    contentfulProject ( slug: { eq: $slug } ){
       title
     }
   }

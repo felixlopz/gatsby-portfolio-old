@@ -31,7 +31,7 @@ const PortfolioIndex = ({data, ...props}) =>{
   }
 
   const siteTitle = data.site.siteMetadata.title;
-  const projects = data.allContentfulProjectModel.edges.map(({node}) => {
+  const projects = data.allContentfulProject.edges.map(({node}) => {
     if (node.tier)
       return node;
     else
@@ -59,16 +59,20 @@ export const pageQuery = graphql`
         title
       }
     }
-     allContentfulProjectModel{
+    allContentfulProject{
       edges{
         node{
+          id
+          techs
           title
-          description
+          tier
           website
           source
-          techs
-          tier
-          id
+          description{
+            childMarkdownRemark{
+              html
+            }
+          }
           image{
             fluid{
               ...GatsbyContentfulFluid
