@@ -82,8 +82,6 @@ const Tech = styled.p`
 	}
 `
 
-
-
 const Footer = styled.div`
 	position: relative;
 	width: 100%;

@@ -139,11 +139,11 @@ const NavLink = styled.li`
 		padding: 0.1em 0.3em;
 		text-decoration: none;
 		color: var(--color-white);
+		font-weight: var(--bold);
 		text-transform: uppercase;
 
 		@media ${props => props.theme.mediaQueries.small}{
 			font-size: 1.3rem;
-			font-weight: var(--bold);
 			cursor: pointer;
 			transition: color 0.3s ease-in;
 
