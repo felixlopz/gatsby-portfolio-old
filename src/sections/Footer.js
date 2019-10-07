@@ -124,8 +124,6 @@ const ListItem = styled.li`
 		}
 	}
 
-
-
 `
 
 const LogoBox = styled.div`
@@ -134,6 +132,14 @@ const LogoBox = styled.div`
 	img{
 		width: 100%;
 	}
+`
+
+const Copy = styled.p`
+	margin-top: 1rem;
+	font-size: 1rem;
+	font-weight: var(--bold);
+	text-transform: uppercase;
+
 `
 
 const Footer = (props) => {
@@ -168,6 +174,9 @@ const Footer = (props) => {
 	  		<LogoBox>
 	  			<img src={logo} alt="felix lopez logo"/>
 	  		</LogoBox>
+	  		<Copy>
+	  			copyright &copy; 2019, Felix Lopez
+	  		</Copy>
   		</Container>
   	</Wrapper>
   )
