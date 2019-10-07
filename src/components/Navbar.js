@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 	color: var(--color-white);
 	width: 100%;
 	position: fixed;
-	z-index: 3;
+	z-index: 4;
 `
 
 const Container = styled.div`
@@ -50,7 +50,7 @@ const MenuButton = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 5;
+	z-index: 6;
 	cursor: pointer;
 `
 const MenuButtonBurger = styled.div`
@@ -90,7 +90,7 @@ const Navigation = styled.div`
 	width: 100vw;
 	height: 100vh;
 	background: var(--color-darker);
-	z-index: 4;
+	z-index: 5;
 	transition: all 0.4s ease;
 	opacity: ${props => props.isNavOpen ? 1 : 0};
 	transform: ${props => props.isNavOpen ? 'translateY(0)' : 'translateY(-100%)'};
@@ -139,12 +139,12 @@ const NavLink = styled.li`
 		padding: 0.1em 0.3em;
 		text-decoration: none;
 		color: var(--color-white);
+		text-transform: uppercase;
 
 		@media ${props => props.theme.mediaQueries.small}{
 			font-size: 1.3rem;
 			font-weight: var(--bold);
 			cursor: pointer;
-			text-transform: uppercase;
 			transition: color 0.3s ease-in;
 
 			&:hover, &:focus{
@@ -212,7 +212,6 @@ const Navbar = (props) => {
 				<StyledNavbar>
 					<LogoContainer>
 						<Link 
-		  				onClick={()=> toggleNav()}
 		  				to="home"
 					   	spy={true}
 					   	smooth={true}
