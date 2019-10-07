@@ -52,15 +52,32 @@ const DescriptionText = styled.p`
 	color: var(--color-light);
 
 	@media ${props => props.theme.mediaQueries.small}{
-	  font-size: 1.6	rem;
+	  font-size: 1.6rem;
 	}
-
-	@media ${props => props.theme.mediaQueries.medium}{
-	  padding: 0.8em  0;
-	  line-height: 1.2;
-  }
+`
+const TechsWrapper = styled.div`
+	display: flex;
+	padding: 0.8em  1em;
 
 `
+
+const Tech = styled.p`
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	font-weight: var(--light);
+
+	@media ${props => props.theme.mediaQueries.small}{
+	  font-size: 1.6rem;
+	}
+
+	span{
+		margin: 0 5px;
+		color: var(--color-blue-lg);
+	}
+`
+
+
+
 const Footer = styled.div`
 	position: relative;
 	width: 100%;
@@ -69,7 +86,7 @@ const Footer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	padding:0 4em;
-	margin-top: 1rem;
+	margin-top: 2rem;
 	
 `;
 
@@ -82,6 +99,8 @@ const Image = styled(Img)`
 
 const ProjectItem = ({project}) => {
 
+	const techs = project.techs.split("-");
+
   return (
     <Wrapper>
   		<Header>
@@ -93,6 +112,16 @@ const ProjectItem = ({project}) => {
 			<DescriptionText>
 				{project.description}
 			</DescriptionText>
+			<TechsWrapper>
+				{
+					techs.map( (tech, i) => {
+						const key = project.id + i;
+						 return i >= techs.length - 1 ?
+						  <Tech key={key}>{tech}</Tech>
+						 : <Tech key={key}>{tech} <span>/</span> </Tech>
+					})
+				}
+			</TechsWrapper>
 			<Footer>
 
 				<ButtonLink href={project.website} color ="blue-lg" icon="link">
