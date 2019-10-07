@@ -155,17 +155,29 @@ const Footer = (props) => {
 	  			</Email>
 	  			<ContactList>
 	  				<ListItem color="green">
-	  					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+	  					<a 
+								href="https://github.com/felixlopz" 
+								target="_blank"
+								rel="noopener noreferrer"
+	  					>
 	  						<FontAwesomeIcon icon ={['fab', 'github']}/>
 	  					</a>
 	  				</ListItem>
 	  				<ListItem color="blue">
-	  					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+	  					<a
+								href="https://www.linkedin.com/in/felix-lopez-a97a31190/" 
+								target="_blank"
+								rel="noopener noreferrer"
+	  					>
 	  						<FontAwesomeIcon icon ={['fab', 'linkedin']}/>
 	  					</a>
 	  				</ListItem>
 	  				<ListItem color="red">
-	  					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+	  					<a 
+								href="https://www.instagram.com/felixlopz_/" 
+								target="_blank"
+								rel="noopener noreferrer"
+	  					>
 	  						<FontAwesomeIcon icon ={['fab', 'instagram']}/>
 	  					</a>
 	  				</ListItem>

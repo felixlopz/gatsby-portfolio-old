@@ -283,17 +283,29 @@ const Navbar = (props) => {
 				  			</a>
 				  		</ListItem>
 				  		<ListItem>
-				  			<a href="https://twitter.com">
+				  			<a 
+				  				href="https://github.com/felixlopz" 
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 				  				<FontAwesomeIcon icon ={['fab', 'github']}/>
 				  			</a>
 				  		</ListItem>
 				  		<ListItem>
-				  			<a href="https://twitter.com">
+				  			<a 
+				  				href="https://www.linkedin.com/in/felix-lopez-a97a31190/" 
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 				  				<FontAwesomeIcon icon ={['fab', 'linkedin']}/>
 				  			</a>
 				  		</ListItem>
 				  		<ListItem>
-				  			<a href="https://twitter.com">
+				  			<a
+									href="https://www.instagram.com/felixlopz_/" 
+									target="_blank"
+									rel="noopener noreferrer"
+				  			>
 				  				<FontAwesomeIcon icon ={['fab', 'instagram']}/>
 				  			</a>
 				  		</ListItem>
