@@ -7,6 +7,9 @@ import  ButtonLink from './ButtonLink';
 
 const Wrapper = styled.div`
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+		
 
 	&:not(:last-child){
 		margin-bottom: 8rem;
@@ -46,7 +49,7 @@ const Header = styled.header`
 `;
 
 const DescriptionText = styled.div`
-
+	flex: 1 0 auto;
 	p{
 		font-size: 1.4rem;
 		padding: 0.8em  1em;
