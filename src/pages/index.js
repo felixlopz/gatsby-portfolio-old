@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
+import GoToTop from "../components/GoToTop"
 
 // sections
 import Hero from '../sections/Hero'
@@ -15,15 +16,31 @@ const ViewHeightDiv = styled.div`
   height: 100vh;
 `
 
+
 const PortfolioIndex = ({data, ...props}) =>{
 
-  const siteTitle = data.site.siteMetadata.title
-  const projects = data.allContentfulProjectModel.edges.map(({node}) => node)
 
-  // we link with node.slug 
+  function compare( a, b ) {
+    if ( a.tier < b.tier ){
+      return 1;
+    }
+    if ( a.tier > b.tier ){
+      return -1;
+    }
+    return 0;
+  }
+
+  const siteTitle = data.site.siteMetadata.title;
+  const projects = data.allContentfulProjectModel.edges.map(({node}) => {
+    if (node.tier)
+      return node;
+    else
+      return null
+  }).filter(Boolean).sort(compare);
 
   return (
     <Layout location={props.location} title={siteTitle}>
+      <GoToTop/>
       <Hero/>
       <ViewHeightDiv id="home"/>
       <Portfolio projects={projects}/>
@@ -49,6 +66,8 @@ export const pageQuery = graphql`
           description
           website
           source
+          techs
+          tier
           id
           image{
             fluid{
