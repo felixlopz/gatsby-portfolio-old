@@ -57,6 +57,7 @@ const Email = styled.a`
 	font-size: 2.4rem;
 	font-weight: var(--medium);
 	color: var(--color-light); 
+	text-decoration: none;
 	
 	@media ${props => props.theme.mediaQueries.smallest}{
 	 	font-size: 2.9rem;
@@ -150,8 +151,8 @@ const Footer = (props) => {
 	  			let's talk and  build  <HightLighter> something   awesome </HightLighter> together!
 	  		</TalkText>
 	  		<ContactBox>
-	  			<Email>
-	  				hello@felixlopez.xyz
+	  			<Email href="mailto:hello@felixlopez.tech">
+	  				hello@felixlopez.tech
 	  			</Email>
 	  			<ContactList>
 	  				<ListItem color="green">

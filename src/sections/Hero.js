@@ -197,7 +197,7 @@ const Hero = (props) => {
   			</ScrollDownBox>
 				<ContactList>
 					<ListItem >
-						<a href="https://twitter.com">
+						<a href="mailto:hello@felixlopez.tech">
 							<FontAwesomeIcon icon ="envelope"/>
 						</a>
 					</ListItem>
