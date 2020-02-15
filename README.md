@@ -1,4 +1,4 @@
-# Gatsby porfolio
+# Gatsby Portfolio
 This is my personal portfolio powered by gatsby an contenful
 
 ![thumbnail](thumbnail.png)
@@ -10,10 +10,12 @@ Add a `.env` file to the root folder with  `CONTENTFUL_ACCESS_TOKEN` , access to
 
 ### install
 ```sh
+  # !IMPORTANT: make sure that you have installed windows build tools https://github.com/felixrieseberg/windows-build-tools
+  npm install -g gatsby-cli
   git clone https://github.com/felixlopz/gatsby-portfolio.git
   cd gatsby-portfolio
   npm install
-  # make sure that you have installed windows build tools https://github.com/felixrieseberg/windows-build-tools
+  
 ```
 
 ### Available commands
