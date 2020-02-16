@@ -6,7 +6,7 @@ This is my personal portfolio powered by gatsby an contenful
 ## Configuration and Installation
 
 ### Config
-Add a `.env` file to the root folder with  `CONTENTFUL_ACCESS_TOKEN`  and `SPACE_ID` tokens provided by the contentful API, you can se an explate a the `.env.sample` file
+Add a `.env` file to the root folder with  `CONTENTFUL_ACCESS_TOKEN`  and `SPACE_ID` tokens provided by the contentful API, you can se an example at `.env.sample` file
 
 ### install
 ```sh
