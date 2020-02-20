@@ -112,7 +112,12 @@ const ProjectItem = ({project}) => {
   				{project.title}
   			</h1>
   		</Header>
-			<Image  fluid={project.image.fluid} />  
+			<a 
+				href={project.website}
+				target="_blank"
+				rel="noopener noreferrer">
+				<Image  fluid={project.image.fluid} />  
+			</a>
 			<DescriptionText 
 				dangerouslySetInnerHTML={{
           __html: project.description.childMarkdownRemark.html,
