@@ -84,6 +84,13 @@ const HightLighter = styled.span`
 	text-decoration: underline;
 `
 
+const getYearsOld = (dob) => {
+	 const diff_ms = Date.now() - dob.getTime();
+   const age_dt = new Date(diff_ms); 
+   return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
+
 const About = (props) => {
 
   return (
@@ -94,7 +101,7 @@ const About = (props) => {
 	  		</Heading>
 	  		<TextContainer>
 					<Paragraph>
-						Hi, my name is Felix Lopez, a 21 years old <HightLighter> Front End Web Developer </HightLighter> and Computer Science student from Venezuela
+						Hi, my name is Felix Lopez, a { getYearsOld(new Date(1998, 8, 15)) } years old <HightLighter> Front End Web Developer </HightLighter> and Computer Science student from Venezuela
 					</Paragraph>	
 					<Paragraph>
 						I started web development more than a year ago doing some projects assigned by a class at university, from there I got hooked on this world and started making my own projects.

@@ -188,7 +188,7 @@ const Footer = (props) => {
 	  			<img src={logo} alt="felix lopez logo"/>
 	  		</LogoBox>
 	  		<Copy>
-	  			copyright &copy; 2019, Felix Lopez
+	  			copyright &copy; {new Date().getFullYear()}, Felix Lopez
 	  		</Copy>
   		</Container>
   	</Wrapper>
